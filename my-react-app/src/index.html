@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class Car{
+           constructor(name){
+               this.brand = name;
+           }
+           present(){
+               return 'I have a brand new car called '+ this.brand
+           }
+        }
+
+
+            let car = new Car('Ford');
+            
+            //document.write(car.brand)
+
+            //if there was a param in the mthd, we would passed it in parenthesis
+            document.write(car.present())
+
+
+            class Model extends Car{}
+
+       
+    </script>
+</body>
+</html>
