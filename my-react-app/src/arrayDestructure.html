@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+<script>
+     //function to destracture a array
+        function calculate(a, b) {
+            let add = a + b;
+            let div = a / b;
+            let mult = a * b;
+            let sub = a - b;
+            return [add, div, mult, sub]
+        }
+        let [add, div, mult, sub] = calculate(3, 5)
+        document.write(`<p>Sum: ${add}</p>`)
+        document.write(`<p>div ${div}</p>`)
+        document.write(`<p>mult: ${mult}</p>`)
+        document.write(`<p>sub: ${sub}</p>`)
+</script>
+</html>

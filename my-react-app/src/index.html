@@ -7,7 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div id="demo">
+        <div id="regular-functin"></div>
+        <button id="btn" type="button" > click</button>
+        <div id="arrow-function"></div>
+        <button id="arrow-btn" type="button">clicke me</button>
+
+    </div>
+    <div id='array'>
+
+    </div>
+     <div id='object'></div>
     <script>
+
        class Car{
            constructor(name){
                this.brand = name;
@@ -17,18 +30,70 @@
            }
         }
 
-
             let car = new Car('Ford');
-            
             //document.write(car.brand)
 
             //if there was a param in the mthd, we would passed it in parenthesis
             document.write(car.present())
 
 
-            class Model extends Car{}
+            class Model extends Car{
+               constructor(name, mod){
+                   super(name)
+                   this.model = mod;
+               }
+
+               show(){
+                   return this.present()+' is a '+ this.model
+               }
+            }
+        
+         let model = new Model('Ford','highbrid')
+          document.write(model.show())
+
+
+          class Header {
+                constructor() {
+                    this.color = "red";
+                }
+                changeColor = function () {
+                    document.getElementById("regular-function").innerHTML = this;
+                };
+
+                changeColorArrow = () => {
+                    document.getElementById("arrow-function").innerHTML = this;
+                };
+            }
+
+            const header = new Header();
+
+            //window object calls the function;
+            window.addEventListener("load", header.changeColor);
+
+            //btn object calls the function;
+            document.getElementById("btn").addEventListener("click", header.changeColor);
+
+            //in regular functin, "this" binding represents
+            //the object that called the function (window, document, btn..)
+
+            //However, in arraw function, 'this' binding represents
+            //the object that defined the arrow function.
+
+            ////window object calls the function;
+            window.addEventListener("load", header.changeColorArrow);
+            //btn object calls the function;
+            document
+                .getElementById("arrow-btn")
+                .addEventListener("click", header.changeColorArrow);
+
+
+               
+
 
        
+
     </script>
+    <script src="index.js" type="module"></script>
+
 </body>
 </html>

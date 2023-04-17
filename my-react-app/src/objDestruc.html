@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <hr>
+    <div id="demo2"></div>
+    <script>
+
+    //destracturing an object 
+    myOb = {
+        color: 'blue',
+        year: '2020',
+        type: 'toyota',
+        make: 'sienna'
+
+    }
+    myCar(myOb)
+    //function with destructered params for myOb object
+    function myCar({ year, type, make, color }) {
+        let vehicule = `this is my ${year} ${type} ${make} with color ${color}`
+
+        document.getElementById('demo').innerHTML = vehicule
+    }
+
+    let anotherObj = {
+        one:'one',
+        two: 'two',
+        register : {
+            name:'name',
+            email: 'email'
+        }
+    }
+    deepObjectDestructure(anotherObj)
+     
+
+    //function with two items destructured using item two 
+    //and another obje inside the object using the name of 
+    //object (register) folled by column(:)then {}
+      function deepObjectDestructure({two, register:{email}}){
+          let deepObj = `object with ${two} and deep destructure ${email}`
+          document.getElementById('demo2').innerHTML = deepObj;
+      }
+    </script>
+</body>
+</html>
